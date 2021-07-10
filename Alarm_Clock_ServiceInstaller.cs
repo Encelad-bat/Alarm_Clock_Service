@@ -14,6 +14,22 @@ namespace Alarm_Clock_Service
         public Alarm_Clock_ServiceInstaller()
         {
             InitializeComponent();
+            this.AfterInstall += Alarm_Clock_ServiceInstaller_AfterInstall;
+            this.AfterRollback += Alarm_Clock_ServiceInstaller_AfterRollback;
+        }
+
+        private void Alarm_Clock_ServiceInstaller_AfterRollback(object sender, System.Configuration.Install.InstallEventArgs e)
+        {
+            Console.BackgroundColor = ConsoleColor.Red;
+            Console.WriteLine("Failed!");
+            Console.BackgroundColor = ConsoleColor.Black;
+        }
+
+        private void Alarm_Clock_ServiceInstaller_AfterInstall(object sender, System.Configuration.Install.InstallEventArgs e)
+        {
+            Console.BackgroundColor = ConsoleColor.Green;
+            Console.WriteLine("Success!");
+            Console.BackgroundColor = ConsoleColor.Black;
         }
     }
 }

@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace Alarm_Clock_Service
 {
     partial class Alarm_Clock_ServiceInstaller
@@ -52,6 +54,7 @@ namespace Alarm_Clock_Service
             this.serviceInstaller1});
 
         }
+
 
         #endregion
 
